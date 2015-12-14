@@ -21,15 +21,16 @@ With these in place, simply launch go_timer.py ("python go_timer.py") and start 
 To test that it works like it should, you can try planting the bomb in an offline game vs bots, in competitive mode.
 
 **For Windows users, here's a more detailed how-to:**
-1. Install python 3.5 (or atleast 3.x)
-2. Check that it's working by opening up a cmd and writing python -V. It should print the python version
-3. If you installed it, but writing python -V does not work, it is not in the path. Google "put python in path windows" to fix.
-4. Put the cfg in the listener folder in your own cfg folder
-5. Install flask, tkinter and requests. You do this by:
-6. In cmd, write pip install flask
-7. In cmd, write pip install tkinter (it is probably already installed)
-8. in cmd, write pip install requests
-9. Go to the GoTimer folder and double-click the run_go_timer.bat file. What happens? A timer window should appear.
+
+1. Install python 3.5 (or atleast 3.x) 
+2. Check that it's working by opening up a cmd and writing python -V. It should print the python version 
+3. If you installed it, but writing python -V does not work, it is not in the path. Google "put python in path windows" to fix. 
+4. Put the cfg in the listener folder in your own cfg folder 
+5. Install flask, tkinter and requests. You do this by: 
+6. In cmd, write pip install flask 
+7. In cmd, write pip install tkinter (it is probably already installed) 
+8. in cmd, write pip install requests 
+9. Go to the GoTimer folder and double-click the run_go_timer.bat file. What happens? A timer window should appear. 
 
 ## Credits
 The GameState-listener is inspired by [csgo-c4-hue](https://github.com/doobix/csgo-c4-hue).
