@@ -2,6 +2,7 @@
 A simple external bomb-timer for CS:GO, written in Python.
 
 ## Demonstration
+Click image to see a small clip of GoTimer in action.
 [![A simple video demo](http://img.youtube.com/vi/tEdAwi1Hqbk/0.jpg)](http://www.youtube.com/watch?v=tEdAwi1Hqbk)
 
 ## How to use
