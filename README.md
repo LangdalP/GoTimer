@@ -44,7 +44,7 @@ Credits to [testiclopz](https://www.reddit.com/user/testiclopz) for this how-to.
 6. Unzip the folder from github anywhere you want
 7. Place the gamestate_integration_go_timer.cfg from the listener folder into your cfg folder. The path is typically ~/.steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg
 8. Use the terminal, and make sure that your current directory is in the unzipped folder
-9. Type python3 go_timer.py to launch the program
+9. Type *python3 go_timer.py* to launch the program
 
 ## Credits
 The GameState-listener is inspired by [csgo-c4-hue](https://github.com/doobix/csgo-c4-hue).
