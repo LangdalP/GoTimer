@@ -83,7 +83,6 @@ class TimerGui(multiprocessing.Process):
         global counter
         try:
             msg = self.queue.get_nowait()
-            print("Received a msg in the gui")
             if msg == BOMB_PLANTED:
                 self.gui.start_timer()
             elif msg == ROUND_OVER:
