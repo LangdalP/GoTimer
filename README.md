@@ -12,7 +12,7 @@ You need Python 3, along with the following Python packages (pip install package
 * Tkinter (if not installed)
 * Requests
 
-You also need to place the gamestate_integration_go_timer.cfg in your cfg folder. The path is typically  X:\PATH_TO_STEAM\steamapps\common\Counter-Strike Global Offensive\csgo\cfg .
+You also need to place the **gamestate_integration_go_timer.cfg** from the **listener folder** in your cfg folder. The path is typically  X:\PATH_TO_STEAM\steamapps\common\Counter-Strike Global Offensive\csgo\cfg .
 
 With these in place, simply launch go_timer.py ("python go_timer.py")
 For Windows users, you can also just click the supplied bat-file.
