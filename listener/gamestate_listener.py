@@ -45,12 +45,10 @@ def process_data(json_string):
 
 
 def send_bomb_planted_message():
-    print("Sending bomb_planted msg")
     message_queue.put(BOMB_PLANTED)
 
 
 def send_round_over_message():
-    print("Sending bomb_planted msg")
     message_queue.put(ROUND_OVER)
 
 
