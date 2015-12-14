@@ -30,7 +30,7 @@ To test that it works like it should, you can try planting the bomb in an offlin
 6. In cmd, write pip install flask 
 7. In cmd, write pip install tkinter (it is probably already installed) 
 8. in cmd, write pip install requests 
-9. Go to the GoTimer folder and double-click the run_go_timer.bat file. What happens? A timer window should appear. 
+9. Go to the GoTimer folder and double-click the run_go_timer.bat file. A timer window should appear. 
 
 ## Credits
 The GameState-listener is inspired by [csgo-c4-hue](https://github.com/doobix/csgo-c4-hue).
