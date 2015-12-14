@@ -40,7 +40,7 @@ def process_data(json_string):
             win_team_key = round_key.get("win_team")
             if bomb_key:
                 send_bomb_planted_message()
-            if win_team_key:
+            elif win_team_key:
                 send_round_over_message()
 
 
