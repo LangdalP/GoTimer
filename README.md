@@ -7,7 +7,7 @@ A simple external bomb-timer for CS:GO, written in Python.
 Click image to see a small clip of GoTimer in action.
 
 ## How to use
-To download the code/program, either press download on the right side of this page, or *git clone* the repo.
+To download the code/program, either press download on the top of this page, or *git clone* the repo.
 
 You need Python 3, along with the following Python packages (pip install package-name)
 * Flask
