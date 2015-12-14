@@ -1,5 +1,6 @@
 from tkinter import *
 import time
+import os
 import math
 import multiprocessing
 from queue import Empty
@@ -94,6 +95,10 @@ class TimerGui(multiprocessing.Process):
     def run(self):
         self.root = Tk()
         self.root.configure(background=BG_COLOUR)
+        self.root.title("GoTimer")
+
+        if "nt" == os.name:
+            self.root.wm_iconbitmap(bitmap = "gt_icon.ico")
 
         self.gui = TimerCanvas(self.root, TIMER_WIDTH, TIMER_HEIGHT)
         self.gui.configure(background=BG_COLOUR)
