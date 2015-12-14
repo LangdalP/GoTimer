@@ -1,6 +1,9 @@
 # GoTimer
 A simple external bomb-timer for CS:GO, written in Python.
 
+## Demonstration
+[![A simple video demo](http://img.youtube.com/vi/tEdAwi1Hqbk/0.jpg)](http://www.youtube.com/watch?v=tEdAwi1Hqbk)
+
 ## How to use
 You need Python 3, along with the following Python packages
 * Flask
