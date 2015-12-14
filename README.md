@@ -33,6 +33,7 @@ To test that it works like it should, you can try planting the bomb in an offlin
 9. Go to the GoTimer folder and double-click the run_go_timer.bat file. A timer window should appear. 
 
 **For Ubuntu users, here's a more detailed how-to:** 
+
 (It is assumed that python3 is already installed
 
 1. Open up the terminal, and write the following
