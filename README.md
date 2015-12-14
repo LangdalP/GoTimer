@@ -17,4 +17,5 @@ For Windows users, you can also just click the supplied bat-file.
 
 ## Credits
 The GameState-listener is inspired by [csgo-c4-hue](https://github.com/doobix/csgo-c4-hue).
+
 I also got some valuable tips from the [Quick Start guide to CS:GO Game State Integration](https://github.com/tsuriga/csgo-gsi-qsguide).
