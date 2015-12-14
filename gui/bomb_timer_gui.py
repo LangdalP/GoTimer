@@ -6,8 +6,6 @@ from queue import Empty
 from config import *
 from messages import *
 
-counter = 1
-
 
 class TimerCanvas(Canvas):
 
@@ -80,7 +78,6 @@ class TimerGui(multiprocessing.Process):
         self.gui = None
 
     def check_messages(self):
-        global counter
         try:
             msg = self.queue.get_nowait()
             if msg == BOMB_PLANTED:
