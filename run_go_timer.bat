@@ -1,2 +1,2 @@
 @echo off
-pythonw.exe go_timer.pyw
+pythonw.exe go_timer.py
