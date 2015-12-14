@@ -37,4 +37,4 @@ The GameState-listener is inspired by [csgo-c4-hue](https://github.com/doobix/cs
 
 I also got some valuable tips from the [Quick Start guide to CS:GO Game State Integration](https://github.com/tsuriga/csgo-gsi-qsguide).
 
-Lastly, a shout-out to [Double0negative for being the first to do this](https://github.com/Double0negative/CSGO-HUD).
+Lastly, a shout-out to [Double0negative for being the first (?) to do this](https://github.com/Double0negative/CSGO-HUD).
