@@ -34,7 +34,7 @@ To test that it works like it should, you can try planting the bomb in an offlin
 
 **For Ubuntu users, here's a more detailed how-to:** 
 
-(It is assumed that python3 is already installed
+(It is assumed that python3 is already installed)
 
 1. Open up the terminal, and write the following
 2. sudo apt-get install python-pip
