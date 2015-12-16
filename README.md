@@ -19,7 +19,7 @@ To test that it works like it should, you can try planting the bomb in an offlin
 
 **For Windows users, here's a more detailed how-to:**
 
-1. Install python 3.5 (or atleast 3.x) 
+1. Install python 3.5 (or atleast 3.x). Make sure to check that "Put python in PATH" is enabled.
 2. Check that it's working by opening up a cmd and writing python -V. It should print the python version 
 3. If you installed it, but writing python -V does not work, it is not in the path. Google "put python in path windows" to fix. 
 4. Put the cfg in the listener folder in your own cfg folder 
