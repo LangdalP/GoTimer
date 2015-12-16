@@ -1,0 +1,5 @@
+14.12.15:
+First version
+
+16.12.15:
+Removed the need for Flask and Requests. For Windows users, it will be enough to just install Python 3 now.
