@@ -7,24 +7,14 @@ A simple external bomb-timer for CS:GO, written in Python. You will not get vacc
 Click image to see a small clip of GoTimer in action.
 
 ## How to use
-To download the code/program, either press download on the top of this page, or *git clone* the repo.
 
-You need Python 3, download from [here](https://www.python.org/downloads/).
+**For Windows users:**
 
-You also need to place the **gamestate_integration_go_timer.cfg** from the **listener folder** in your cfg folder. The path is typically  X:\PATH_TO_STEAM\steamapps\common\Counter-Strike Global Offensive\csgo\cfg .
-
-With these in place, simply launch go_timer.py ("python go_timer.py") and start the game. You can also start the timer after the game has been launched.
-
-To test that it works like it should, you can try planting the bomb in an offline game vs bots, in competitive mode.
-
-**For Windows users, here's a more detailed how-to:**
-
-1. Install python 3.5 (or atleast 3.x). Make sure to check that "Put python in PATH" is enabled.
-2. Check that it's working by opening up a cmd and writing python -V. It should print the python version 
-3. If you installed it, but writing python -V does not work, it is not in the path. Google "put python in path windows" to fix. 
-4. Unzip the folder from github anywhere you want
-5. Put the cfg in the listener folder in your own cfg folder 
-6. Go to the unzipped folder and double-click the run_go_timer.bat file. A timer window should appear. 
+1. Download the latest installer here: https://github.com/LangdalP/GoTimer/releases (installer with cfg)
+2. Unzip the file 
+3. Install the program with Python (unless you already have Python)
+4. Put the file called **gamestate_integration_go_timer.cfg** in X:\PATH_TO_STEAM\steamapps\common\Counter-Strike Global Offensive\csgo\cfg , where PATH_TO_STEAM is where your steam folder is.
+5. Start the program and enjoy! If CS:GO was launched before you copied the cfg-file, you have to restart it.
 
 **For Ubuntu users, here's a more detailed how-to:** 
 
