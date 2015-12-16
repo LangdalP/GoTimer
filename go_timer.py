@@ -3,8 +3,7 @@ from gui.bomb_timer_gui import TimerGui
 from listener.gamestate_listener import ListenerWrapper
 
 if __name__ == "__main__":
-    # We use a message queue so that the gui can consume messages
-    # created by the gamestate listener
+    # Message queue used for comms between processes
     queue = multiprocessing.Queue()
     gui = TimerGui(queue)
     listener = ListenerWrapper(queue)
