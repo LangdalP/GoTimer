@@ -58,3 +58,6 @@ target/
 
 # Windows shortcuts
 *.lnk
+
+# PyNSIST
+installer.cfg

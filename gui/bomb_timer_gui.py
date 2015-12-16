@@ -4,8 +4,8 @@ import os
 import math
 import multiprocessing
 from queue import Empty
-from config import *
-from messages import *
+from misc.config import *
+from misc.messages import *
 
 
 class TimerCanvas(Canvas):
@@ -97,8 +97,10 @@ class TimerGui(multiprocessing.Process):
         self.root.configure(background=BG_COLOUR)
         self.root.title("GoTimer")
 
+        current_dir = os.path.dirname(os.path.realpath(__file__))
+        parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
         if "nt" == os.name:
-            self.root.wm_iconbitmap(bitmap = "gt_icon.ico")
+            self.root.wm_iconbitmap(bitmap = os.path.join(parent_dir, "gt_icon.ico"))
 
         self.gui = TimerCanvas(self.root, TIMER_WIDTH, TIMER_HEIGHT)
         self.gui.configure(background=BG_COLOUR)

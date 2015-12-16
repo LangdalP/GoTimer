@@ -1,5 +1,6 @@
 14.12.15:
-First version
+- First version
 
 16.12.15:
-Removed the need for Flask and Requests. For Windows users, it will be enough to just install Python 3 now.
+- Removed the need for Flask and Requests. For Windows users, it will be enough to just install Python 3 now.
+- Did a few simple modifications to the code to enable using pynsist to build Windows installers.

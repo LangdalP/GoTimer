@@ -3,8 +3,8 @@ import multiprocessing
 import http.server
 import socketserver
 import urllib.request
-from config import *
-from messages import *
+from misc.config import *
+from misc.messages import *
 
 
 class PostHandler(http.server.SimpleHTTPRequestHandler):
@@ -13,7 +13,6 @@ class PostHandler(http.server.SimpleHTTPRequestHandler):
         http.server.SimpleHTTPRequestHandler.__init__(self, *args)
 
     def do_POST(self):
-        print(self.path)
         if self.path == "/shutdown":
             self.server.should_be_running = False
         else:
