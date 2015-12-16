@@ -1,5 +1,5 @@
 # GoTimer
-A simple external bomb-timer for CS:GO, written in Python. You will not get vacced using this, because it uses [Valve's public gamestate integration](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration).
+A simple external bomb-timer for CS:GO, written in Python. You will not get vacced using this, because it uses [Valve's public gamestate integration](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration). Now has an easy-to-use installer for Windows users.
 
 ## Demonstration
 [![A simple video demo](http://img.youtube.com/vi/tEdAwi1Hqbk/0.jpg)](http://www.youtube.com/watch?v=tEdAwi1Hqbk)
