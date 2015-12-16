@@ -9,10 +9,7 @@ Click image to see a small clip of GoTimer in action.
 ## How to use
 To download the code/program, either press download on the top of this page, or *git clone* the repo.
 
-You need Python 3, along with the following Python packages (pip install package-name)
-* Flask
-* Tkinter (if not installed)
-* Requests
+You need Python 3, download from [here](https://www.python.org/downloads/).
 
 You also need to place the **gamestate_integration_go_timer.cfg** from the **listener folder** in your cfg folder. The path is typically  X:\PATH_TO_STEAM\steamapps\common\Counter-Strike Global Offensive\csgo\cfg .
 
@@ -26,10 +23,6 @@ To test that it works like it should, you can try planting the bomb in an offlin
 2. Check that it's working by opening up a cmd and writing python -V. It should print the python version 
 3. If you installed it, but writing python -V does not work, it is not in the path. Google "put python in path windows" to fix. 
 4. Put the cfg in the listener folder in your own cfg folder 
-5. Install flask, tkinter and requests. You do this by: 
-6. In cmd, write pip install flask 
-7. In cmd, write pip install tkinter (it is probably already installed) 
-8. in cmd, write pip install requests 
 9. Go to the GoTimer folder and double-click the run_go_timer.bat file. A timer window should appear. 
 
 **For Ubuntu users, here's a more detailed how-to:** 
@@ -38,9 +31,7 @@ Credits to [testiclopz](https://www.reddit.com/user/testiclopz) for this how-to.
 
 1. Open up the terminal, and write the following
 2. sudo apt-get install python-pip
-3. sudo apt-get install python-flask
 4. sudo apt-get install python3-tk
-5. pip install requests
 6. Unzip the folder from github anywhere you want
 7. Place the gamestate_integration_go_timer.cfg from the listener folder into your cfg folder. The path is typically ~/.steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg
 8. Use the terminal, and make sure that your current directory is in the unzipped folder
