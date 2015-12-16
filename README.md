@@ -1,5 +1,5 @@
 # GoTimer
-A simple external bomb-timer for CS:GO, written in Python.
+A simple external bomb-timer for CS:GO, written in Python. You will not get vacced using this, because it uses [Valve's public gamestate integration](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration).
 
 ## Demonstration
 [![A simple video demo](http://img.youtube.com/vi/tEdAwi1Hqbk/0.jpg)](http://www.youtube.com/watch?v=tEdAwi1Hqbk)
@@ -20,9 +20,35 @@ With these in place, simply launch go_timer.py ("python go_timer.py") and start 
 
 To test that it works like it should, you can try planting the bomb in an offline game vs bots, in competitive mode.
 
-For Windows users, you can also just click the supplied bat-file.
+**For Windows users, here's a more detailed how-to:**
+
+1. Install python 3.5 (or atleast 3.x) 
+2. Check that it's working by opening up a cmd and writing python -V. It should print the python version 
+3. If you installed it, but writing python -V does not work, it is not in the path. Google "put python in path windows" to fix. 
+4. Put the cfg in the listener folder in your own cfg folder 
+5. Install flask, tkinter and requests. You do this by: 
+6. In cmd, write pip install flask 
+7. In cmd, write pip install tkinter (it is probably already installed) 
+8. in cmd, write pip install requests 
+9. Go to the GoTimer folder and double-click the run_go_timer.bat file. A timer window should appear. 
+
+**For Ubuntu users, here's a more detailed how-to:** 
+
+Credits to [testiclopz](https://www.reddit.com/user/testiclopz) for this how-to. It is assumed that python3 is already installed.
+
+1. Open up the terminal, and write the following
+2. sudo apt-get install python-pip
+3. sudo apt-get install python-flask
+4. sudo apt-get install python3-tk
+5. pip install requests
+6. Unzip the folder from github anywhere you want
+7. Place the gamestate_integration_go_timer.cfg from the listener folder into your cfg folder. The path is typically ~/.steam/steamapps/common/Counter-Strike Global Offensive/csgo/cfg
+8. Use the terminal, and make sure that your current directory is in the unzipped folder
+9. Type *python3 go_timer.py* to launch the program
 
 ## Credits
 The GameState-listener is inspired by [csgo-c4-hue](https://github.com/doobix/csgo-c4-hue).
 
 I also got some valuable tips from the [Quick Start guide to CS:GO Game State Integration](https://github.com/tsuriga/csgo-gsi-qsguide).
+
+Lastly, a shout-out to [Double0negative for being the first (?) to do this](https://github.com/Double0negative/CSGO-HUD).
