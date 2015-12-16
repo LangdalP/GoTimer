@@ -16,9 +16,9 @@ Click image to see a small clip of GoTimer in action.
 4. Put the file called **gamestate_integration_go_timer.cfg** in X:\PATH_TO_STEAM\steamapps\common\Counter-Strike Global Offensive\csgo\cfg , where PATH_TO_STEAM is where your steam folder is.
 5. Start the program from your start-menu. If CS:GO was launched before you copied the cfg-file, you have to restart it.
 
-**For Ubuntu users, here's a more detailed how-to:** 
+**For Ubuntu users:** 
 
-Credits to [testiclopz](https://www.reddit.com/user/testiclopz) for this how-to. It is assumed that python3 is already installed.
+Credits to [testiclopz](https://www.reddit.com/user/testiclopz) for parts of this how-to. It is assumed that python3 is already installed.
 
 1. In the terminal: sudo apt-get install python3-tk
 2. Unzip the folder from github anywhere you want
