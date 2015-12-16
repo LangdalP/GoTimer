@@ -1,62 +1,63 @@
 import json
 import multiprocessing
-import logging
-from flask import Flask, request
+import http.server
+import socketserver
+import urllib.request
 from config import *
 from messages import *
-import requests
-
-app = Flask(__name__)
-
-message_queue = None
 
 
-@app.route("/", methods=["POST"])
-def main():
-    process_data(request.data.decode("utf-8"))
-    return ""
+class PostHandler(http.server.SimpleHTTPRequestHandler):
+
+    def __init__(self, *args):
+        http.server.SimpleHTTPRequestHandler.__init__(self, *args)
+
+    def do_POST(self):
+        print(self.path)
+        if self.path == "/shutdown":
+            self.server.should_be_running = False
+        else:
+            length = int(self.headers["Content-Length"])
+            post_body = self.rfile.read(length).decode("utf-8")
+            self.process_post_data(post_body)
+        self.send_ok_response()
+
+    def process_post_data(self, json_string):
+        json_data = json.loads(json_string)
+        added_key = json_data.get("added")
+        if added_key:
+            round_key = added_key.get("round")
+            if round_key:
+                bomb_key = round_key.get("bomb")
+                win_team_key = round_key.get("win_team")
+                if bomb_key:
+                    self.send_bomb_planted_message()
+                elif win_team_key:
+                    self.send_round_over_message()
+
+    def send_bomb_planted_message(self):
+        self.server.msg_queue.put(BOMB_PLANTED)
+
+    def send_round_over_message(self):
+        self.server.msg_queue.put(ROUND_OVER)
+
+    def send_ok_response(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/html")
+        self.end_headers()
 
 
-def shutdown_server():
-    func = request.environ.get('werkzeug.server.shutdown')
-    if func is None:
-        raise RuntimeError('Not running with the Werkzeug Server')
-    func()
+class ListenerServer(socketserver.TCPServer):
 
+    def __init__(self, server_address, req_handler_class, msg_queue):
+        self.msg_queue = msg_queue
+        self.should_be_running = True
+        socketserver.TCPServer.__init__(
+            self, server_address, req_handler_class)
 
-@app.route('/shutdown', methods=['POST'])
-def shutdown():
-    shutdown_server()
-    return ''
-
-
-def process_data(json_string):
-    json_data = json.loads(json_string)
-    added_key = json_data.get("added")
-    if added_key:
-        round_key = added_key.get("round")
-        if round_key:
-            bomb_key = round_key.get("bomb")
-            win_team_key = round_key.get("win_team")
-            if bomb_key:
-                send_bomb_planted_message()
-            elif win_team_key:
-                send_round_over_message()
-
-
-def send_bomb_planted_message():
-    message_queue.put(BOMB_PLANTED)
-
-
-def send_round_over_message():
-    message_queue.put(ROUND_OVER)
-
-
-def start_listener():
-    if not DEBUG_ENABLED:
-        log = logging.getLogger('werkzeug')
-        log.setLevel(logging.ERROR)
-    app.run(port=3000, debug=DEBUG_ENABLED, use_reloader=False)
+    def serve_forever(self):
+        while self.should_be_running:
+            self.handle_request()
 
 
 class ListenerWrapper(multiprocessing.Process):
@@ -64,11 +65,13 @@ class ListenerWrapper(multiprocessing.Process):
     def __init__(self, msg_queue):
         multiprocessing.Process.__init__(self)
         self.msg_queue = msg_queue
+        self.server = None
 
     def run(self):
-        global message_queue
-        message_queue = self.msg_queue
-        start_listener()
+        self.server = ListenerServer(
+            ("127.0.0.1", 3000), PostHandler, self.msg_queue)
+        self.server.serve_forever()
 
     def shutdown(self):
-        requests.post("http://127.0.0.1:3000/shutdown", data={})
+        req = urllib.request.Request("http://127.0.0.1:3000/shutdown", data=b"")
+        urllib.request.urlopen(req)
