@@ -6,7 +6,7 @@ A simple external bomb-timer for CS:GO, written in Python. You will not get vacc
 
 Click image to see a small clip of GoTimer in action.
 
-## How to use
+## How to get started:
 
 **For Windows users:**
 
