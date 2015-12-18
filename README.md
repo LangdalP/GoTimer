@@ -1,6 +1,9 @@
 # GoTimer
 A simple external bomb-timer for CS:GO, written in Python. You will not get vacced using this, because it uses [Valve's public gamestate integration](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration). Now has an easy-to-use installer for Windows users.
 
+## NOTE:
+On December 17 2015, Valve released a patch that make the "bomb planted" event randomly delayed. This signals that they don't want players to use this type of aid. Because of it, this program will not be developed further, but feel free to use it in it's current state. I will still work with the game state integration API to see what other cool stuff can be done with it.
+
 ## Demonstration
 [![A simple video demo](http://img.youtube.com/vi/tEdAwi1Hqbk/0.jpg)](http://www.youtube.com/watch?v=tEdAwi1Hqbk)
 
