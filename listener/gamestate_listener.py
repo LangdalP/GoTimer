@@ -3,6 +3,7 @@ import multiprocessing
 import http.server
 import socketserver
 import urllib.request
+import logging
 from misc.config import *
 from misc.messages import *
 
@@ -23,6 +24,7 @@ class PostHandler(http.server.SimpleHTTPRequestHandler):
 
     def process_post_data(self, json_string):
         json_data = json.loads(json_string)
+        logging.debug(json_string)
         added_key = json_data.get("added")
         if added_key:
             round_key = added_key.get("round")
@@ -69,6 +71,7 @@ class ListenerWrapper(multiprocessing.Process):
     def run(self):
         self.server = ListenerServer(
             ("127.0.0.1", 3000), PostHandler, self.msg_queue)
+        logging.basicConfig(filename='cs_events.log', filemode='w', level=logging.DEBUG)
         self.server.serve_forever()
 
     def shutdown(self):
