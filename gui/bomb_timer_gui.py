@@ -63,7 +63,16 @@ class TimerCanvas(Canvas):
 
     def canvas_clicked(self, event):
         conf_dialog = ConfigDialog(self)
-        self.wait_window(conf_dialog.top)
+        conf_dialog.transient(self)
+        # Workaround for linux Tkinter
+        while True:
+            try:
+                conf_dialog.grab_set()
+            except TclError:
+                pass
+            else:
+                break
+        self.wait_window(conf_dialog)
 
 
 # Probably not idiomatic python

@@ -1,18 +1,33 @@
 from tkinter import *
+import configparser as parser
 
 
-class ConfigDialog:
+class ConfigDialog(Toplevel):
     def __init__(self, parent):
-        self.top = Toplevel(parent)
-        Label(self.top, text="Test").pack()
+        Toplevel.__init__(self, parent)
 
-        self.e = Entry(self.top)
+        self.title("Configuration")
+
+        Label(self, text="GoBuddy Configuration").pack()
+        self.e = Entry(self)
         self.e.pack(padx=5)
+        Button(self, text="Save", command=self.ok).pack(pady=5)
 
-        b = Button(self.top, text="Ok", command=self.ok)
-        b.pack(pady=5)
+        self.init()
+
+    def init(self):
+        config = parser.ConfigParser()
+        config.read("config.ini")
+
+        text_value = config["TestSection"]["TextEntry"]
+        self.e.insert(0, text_value)
 
     def ok(self):
         print(self.e.get())
-        self.top.destroy()
+        with open("config.ini", "w") as cfg_file:
+            config = parser.ConfigParser()
+            config.add_section("TestSection")
+            config.set("TestSection", "TextEntry", self.e.get())
+            config.write(cfg_file)
+        self.destroy()
 
