@@ -6,6 +6,7 @@ import multiprocessing
 from queue import Empty
 from misc.config import *
 from misc.messages import *
+from gui.bomb_timer_config_gui import *
 
 
 class TimerCanvas(Canvas):
@@ -19,6 +20,8 @@ class TimerCanvas(Canvas):
         self.start_time = None
         self.stop_timer = False
         self.timer_running = False
+
+        self.bind("<Button-1>", self.canvas_clicked)
 
     def start_timer(self, start_time=BOMB_TIME):
         if self.timer_running:
@@ -57,6 +60,10 @@ class TimerCanvas(Canvas):
             self.set_text(time_left_text, HURRY_UP_COLOUR)
         else:
             self.set_text(time_left_text)
+
+    def canvas_clicked(self, event):
+        conf_dialog = ConfigDialog(self)
+        self.wait_window(conf_dialog.top)
 
 
 # Probably not idiomatic python
