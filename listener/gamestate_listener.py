@@ -71,7 +71,7 @@ class ListenerWrapper(multiprocessing.Process):
     def run(self):
         self.server = ListenerServer(
             ("127.0.0.1", 3000), PostHandler, self.msg_queue)
-        logging.basicConfig(filename='cs_events.log', filemode='w', level=logging.DEBUG)
+        logging.basicConfig(filename='cs_events.log', filemode='a', level=logging.DEBUG)
         self.server.serve_forever()
 
     def shutdown(self):
