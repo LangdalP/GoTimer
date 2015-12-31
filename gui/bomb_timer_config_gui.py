@@ -8,10 +8,13 @@ class ConfigDialog(Toplevel):
 
         self.title("Configuration")
 
-        Label(self, text="GoBuddy Configuration").pack()
+        Label(self, text="GoBuddy Configuration").grid(row=0, column=0, padx=5, pady=2)
         self.e = Entry(self)
-        self.e.pack(padx=5)
-        Button(self, text="Save", command=self.ok).pack(pady=5)
+        self.e.grid(row=1, padx=5, pady=2)
+
+        Entry(self).grid(row=2, padx=5, pady=2)
+
+        Button(self, text="Save", command=self.ok).grid(row=3, padx=5, pady=2)
 
         self.init()
 
