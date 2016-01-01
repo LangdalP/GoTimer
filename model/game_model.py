@@ -23,6 +23,8 @@ class GameModel:
         self.obs_callbacks = []
 
     def set_map(self, map):
+        if map == self.current_map:
+            return
         self.current_map = map
         self.notify_observers()
 
@@ -31,6 +33,8 @@ class GameModel:
         self.notify_observers()
 
     def set_game_status(self, status):
+        if status == self.game_status:
+            return
         self.game_status = status
         self.notify_observers()
 
