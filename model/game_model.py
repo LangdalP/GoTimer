@@ -19,7 +19,7 @@ class GameModel:
         self.player_list = []
         self.game_status = None
         self.round_status = None
-        self.rounds = []    # Contains who won each completed round
+        self.rounds = [None] * 30   # Contains who won each completed round
         self.obs_callbacks = []
 
     def set_map(self, map):
@@ -42,6 +42,21 @@ class GameModel:
     def set_rounds(self, rounds):
         self.rounds = rounds
         self.notify_observers()
+
+    # Note: The rounds are zero-indexed in the model
+    def set_round_score(self, round_no, round_winners):
+        if round_no > (len(self.rounds) - 1):
+            extra_rounds = [None] * 10
+            self.rounds.extend(extra_rounds)
+        if round_no > len(self.rounds) - 1):
+            raise Exception("Invalid round number!")
+        self.rounds[round_no] = round_winners
+
+    def get_num_completed_rounds(self):
+        for i in range(len(self.rounds)):
+            if self.rounds[i] is None:
+                return i
+        return len(self.rounds)
 
     def notify_observers(self, what=None):
         for obs in self.obs_callbacks:
