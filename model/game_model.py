@@ -48,7 +48,7 @@ class GameModel:
         if round_no > (len(self.rounds) - 1):
             extra_rounds = [None] * 10
             self.rounds.extend(extra_rounds)
-        if round_no > len(self.rounds) - 1):
+        if round_no > (len(self.rounds) - 1):
             raise Exception("Invalid round number!")
         self.rounds[round_no] = round_winners
 

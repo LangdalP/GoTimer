@@ -6,11 +6,11 @@ class CsgoMsgProcessor(MsgProcessor):
 
     def process(self, json_data):
         if "map" in json_data and "round" in json_data:
-            process_map_and_round_data(json_data["map"], json_data["round"])
+            self.process_map_and_round_data(json_data["map"], json_data["round"])
 
     def process_map_and_round_data(self, map_data, round_data):
         if "name" in map_data:
-            self.model.set_map(map_data["map"])
+            self.model.set_map(map_data["name"])
         if "phase" in map_data:
             self.model.set_game_status(map_data["phase"])
         if "win_team" in round_data:
